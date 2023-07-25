@@ -22,6 +22,8 @@ public:
 
     void ResetActiveForm(Form* form);
 
+    void Watermark();
+
     void PollEvents();
 private:
     bool m_bHasCreatedInstance = false;

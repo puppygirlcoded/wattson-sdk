@@ -110,6 +110,10 @@ void ClickGui::OnSwapBuffers()
 		}
 	}
 
+	g_WattsonRender->Begin();
+
+	g_Framework->Watermark();
+
 	if (this->m_bIsOpen)
 	{
 		g_Framework->PollEvents();

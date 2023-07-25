@@ -11,11 +11,15 @@ void ClickFramework::CreateInstance()
 
     this->m_vecInitialPosition = Wattson::Vector2f(50.f, 50.f);
 
-    auto CombatForm = this->AddForm("Combat", EFormFlagOpenCollapsedState);
+    auto CombatForm = this->AddForm("Combat");
     
-    auto VisualsForm = this->AddForm("Visuals");
+    auto VisualsForm = this->AddForm("Visuals", EFormFlagOpenCollapsedState);
     VisualsForm->AddControl("Name ESP", &g_Vars->Visuals.Name);
     VisualsForm->AddControl("Tracer ESP", &g_Vars->Visuals.Snaplines);
+    if (g_Wattson->g_Utils.m_iMinecraftVersion == 1)
+    {
+        VisualsForm->AddControl("Glow", &g_Vars->Visuals.Glow);
+    }
     VisualsForm->AddControl("Fullbright", &g_Vars->Visuals.Fullbright);
 
     auto ClickerForm = this->AddForm("Clicker");
@@ -85,9 +89,26 @@ void ClickFramework::ResetActiveForm(Form* form)
     }
 }
 
+void ClickFramework::Watermark()
+{
+    int m_iOffset = 0;
+    auto RenderItem = [&](const std::string& m_sFirstLabel, const std::string& m_sSecondLabel) -> void
+    {
+        const auto m_vecTextSize = g_WattsonRender->GetTextSize(m_sFirstLabel);
+
+        g_WattsonRender->AddText(m_sFirstLabel, { 3.f, 2.f + m_iOffset }, Wattson::Color(97, 140, 209));
+        g_WattsonRender->AddText(m_sSecondLabel, { 3.f + m_vecTextSize.x, 2.f + m_iOffset }, Wattson::Color(180, 180, 180));
+
+        m_iOffset += m_vecTextSize.y;
+    };
+    
+    RenderItem("Wattson", "Client");
+    RenderItem("Version: ", "1.0.0");
+    RenderItem("FPS: ", std::to_string(static_cast<int>(ImGui::GetIO().Framerate)));
+}
+
 void ClickFramework::PollEvents()
 {
-    g_WattsonRender->Begin();
 
     for (auto& Form : this->m_arrForms)
     {
