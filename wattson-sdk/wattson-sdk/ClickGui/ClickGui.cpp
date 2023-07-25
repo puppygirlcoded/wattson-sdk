@@ -89,15 +89,19 @@ void ClickGui::OnSwapBuffers()
 	ImGui::GetStyle().Alpha = m_flMenuAlpha;
 	ImGui::GetStyle().WindowRounding = ImGui::GetStyle().ChildRounding = ImGui::GetStyle().FrameRounding = 3.f;
 
-	if (this->m_bIsOpen) {
-		if (m_ClipCursor.test_and_set()) {
+	if (this->m_bIsOpen) 
+	{
+		if (m_ClipCursor.test_and_set()) 
+		{
 			GetClipCursor(&m_rOriginalClip);
 		}
 
 		ClipCursor(NULL);
 	}
-	else {
-		if (m_rOriginalClip.right > m_rOriginalClip.left && m_rOriginalClip.bottom > m_rOriginalClip.top) {
+	else 
+	{
+		if (m_rOriginalClip.right > m_rOriginalClip.left && m_rOriginalClip.bottom > m_rOriginalClip.top) 
+		{
 			ClipCursor(&m_rOriginalClip);
 			m_ClipCursor.clear();
 		}
