@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{9471844b-2869-45ac-94d1-06c0de03cc10}</ProjectGuid>
+    <RootNamespace>wattson-sdk</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>wattson-sdk</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(ProjectDir)/wattson-sdk;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)/wattson-sdk/vendor/JNI;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <VcpkgTriplet>x64-windows-static-md</VcpkgTriplet>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;wattson-sdk_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;wattson-sdk_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;wattson-sdk_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>wattson-sdk/vendor/JNI/jvm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/FORCE:MULTIPLE %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;wattson-sdk_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalOptions>/FORCE:MULTIPLE %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="wattson-sdk\ClickGui\ClickGui.cpp" />
+    <ClCompile Include="wattson-sdk\HookManager\Detours\SwapBuffers.cpp" />
+    <ClCompile Include="wattson-sdk\HookManager\HookManager.cpp" />
+    <ClCompile Include="wattson-sdk\ModuleHandler\ModuleHandler.cpp" />
+    <ClCompile Include="wattson-sdk\ModuleHandler\Modules\Visuals\Visuals.cpp" />
+    <ClCompile Include="wattson-sdk\sdk\ActiveRenderInfo\ActiveRenderInfo.cpp" />
+    <ClCompile Include="wattson-sdk\sdk\FloatBuffer\FloatBuffer.cpp" />
+    <ClCompile Include="wattson-sdk\sdk\Minecraft\Minecraft.cpp" />
+    <ClCompile Include="wattson-sdk\sdk\Player\Player.cpp" />
+    <ClCompile Include="wattson-sdk\sdk\RenderManager\RenderManager.cpp" />
+    <ClCompile Include="wattson-sdk\sdk\Util\List.cpp" />
+    <ClCompile Include="wattson-sdk\sdk\World\World.cpp" />
+    <ClCompile Include="wattson-sdk\vendor\Console\Console.cpp" />
+    <ClCompile Include="wattson-sdk\vendor\Input\Input.cpp" />
+    <ClCompile Include="wattson-sdk\vendor\Java\Java.cpp" />
+    <ClCompile Include="wattson-sdk\vendor\Mapper\Mapper.cpp" />
+    <ClCompile Include="wattson-sdk\vendor\Math\Math.cpp" />
+    <ClCompile Include="wattson-sdk\vendor\Render\Render.cpp" />
+    <ClCompile Include="wattson-sdk\vendor\Wattson\Wattson.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="wattson-sdk\ClickGui\ClickGui.hpp" />
+    <ClInclude Include="wattson-sdk\ClickGui\Framework\Fonts\Fonts.hpp" />
+    <ClInclude Include="wattson-sdk\HookManager\HookManager.hpp" />
+    <ClInclude Include="wattson-sdk\ModuleHandler\ModuleHandler.hpp" />
+    <ClInclude Include="wattson-sdk\ModuleHandler\Modules\Visuals\Visuals.hpp" />
+    <ClInclude Include="wattson-sdk\ModuleHandler\Variables.hpp" />
+    <ClInclude Include="wattson-sdk\sdk\ActiveRenderInfo\ActiveRenderInfo.hpp" />
+    <ClInclude Include="wattson-sdk\sdk\FloatBuffer\FloatBuffer.hpp" />
+    <ClInclude Include="wattson-sdk\sdk\Minecraft\Minecraft.hpp" />
+    <ClInclude Include="wattson-sdk\sdk\Player\Player.hpp" />
+    <ClInclude Include="wattson-sdk\sdk\RenderManager\RenderManager.hpp" />
+    <ClInclude Include="wattson-sdk\sdk\Util\List.hpp" />
+    <ClInclude Include="wattson-sdk\sdk\World\World.hpp" />
+    <ClInclude Include="wattson-sdk\vendor\Console\Console.hpp" />
+    <ClInclude Include="wattson-sdk\vendor\Input\Input.hpp" />
+    <ClInclude Include="wattson-sdk\vendor\Java\Java.hpp" />
+    <ClInclude Include="wattson-sdk\vendor\JNI\classfile_constants.h" />
+    <ClInclude Include="wattson-sdk\vendor\JNI\jawt.h" />
+    <ClInclude Include="wattson-sdk\vendor\JNI\jawt_md.h" />
+    <ClInclude Include="wattson-sdk\vendor\JNI\jdwpTransport.h" />
+    <ClInclude Include="wattson-sdk\vendor\JNI\jni.h" />
+    <ClInclude Include="wattson-sdk\vendor\JNI\jni_md.h" />
+    <ClInclude Include="wattson-sdk\vendor\JNI\jvmti.h" />
+    <ClInclude Include="wattson-sdk\vendor\JNI\jvmticmlr.h" />
+    <ClInclude Include="wattson-sdk\vendor\Mapper\Mapper.hpp" />
+    <ClInclude Include="wattson-sdk\vendor\Math\Math.hpp" />
+    <ClInclude Include="wattson-sdk\vendor\Math\Matrix.hpp" />
+    <ClInclude Include="wattson-sdk\vendor\Math\Vector2f.hpp" />
+    <ClInclude Include="wattson-sdk\vendor\Math\Vector3f.hpp" />
+    <ClInclude Include="wattson-sdk\vendor\Math\Vector4f.hpp" />
+    <ClInclude Include="wattson-sdk\vendor\Render\Render.hpp" />
+    <ClInclude Include="wattson-sdk\vendor\std.hpp" />
+    <ClInclude Include="wattson-sdk\vendor\Wattson\Wattson.hpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
