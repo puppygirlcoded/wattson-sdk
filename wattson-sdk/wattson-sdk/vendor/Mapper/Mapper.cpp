@@ -67,6 +67,10 @@ void Mapper::OnStartup()
 			{"net/minecraft/client/renderer/ActiveRenderInfo", "auz"},
 			{"PROJECTION", "c"},
 			{"MODELVIEW", "b"},
+
+			{"net/minecraft/client/settings/GameSettings", "avh"},
+			{"gameSettings", "t"},
+			{"gammaSetting", "aJ"},
 		}; 
 	}
 	break;
@@ -102,6 +106,10 @@ void Mapper::OnStartup()
 			{"net/minecraft/client/renderer/ActiveRenderInfo", "bby"},
 			{"PROJECTION", "c"},
 			{"MODELVIEW", "b"},
+
+			{"net/minecraft/client/settings/GameSettings", "bcf"},
+			{"gameSettings", "u"},
+			{"gammaSetting", "ay"},
 		};
 	}
 	break;

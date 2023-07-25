@@ -9,6 +9,14 @@
 #include <deque>
 #include <any>
 
+#ifdef min
+#undef min
+#endif
+
+#ifdef max
+#undef max
+#endif
+
 // libs
 #pragma comment(lib, "opengl32.lib")
 #pragma comment(lib, "glu32.lib")
@@ -57,6 +65,7 @@
 #include <sdk/World/World.hpp>
 #include <sdk/RenderManager/RenderManager.hpp>
 #include <sdk/ActiveRenderInfo/ActiveRenderInfo.hpp>
+#include <sdk/GameSettings/GameSettings.hpp>
 
 // Modules
 #include <ModuleHandler/Modules/Visuals/Visuals.hpp>

@@ -82,7 +82,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;wattson-sdk_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;WATTSONSDK_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -101,7 +101,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;wattson-sdk_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;WATTSONSDK_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -120,7 +120,7 @@
     <ClCompile>
       <WarningLevel>TurnOffAllWarnings</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;wattson-sdk_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;WATTSONSDK_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -141,7 +141,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;wattson-sdk_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;WATTSONSDK_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -166,6 +166,7 @@
     <ClCompile Include="wattson-sdk\ModuleHandler\Modules\Visuals\Visuals.cpp" />
     <ClCompile Include="wattson-sdk\sdk\ActiveRenderInfo\ActiveRenderInfo.cpp" />
     <ClCompile Include="wattson-sdk\sdk\FloatBuffer\FloatBuffer.cpp" />
+    <ClCompile Include="wattson-sdk\sdk\GameSettings\GameSettings.cpp" />
     <ClCompile Include="wattson-sdk\sdk\Minecraft\Minecraft.cpp" />
     <ClCompile Include="wattson-sdk\sdk\Player\Player.cpp" />
     <ClCompile Include="wattson-sdk\sdk\RenderManager\RenderManager.cpp" />
@@ -188,6 +189,7 @@
     <ClInclude Include="wattson-sdk\ModuleHandler\Variables.hpp" />
     <ClInclude Include="wattson-sdk\sdk\ActiveRenderInfo\ActiveRenderInfo.hpp" />
     <ClInclude Include="wattson-sdk\sdk\FloatBuffer\FloatBuffer.hpp" />
+    <ClInclude Include="wattson-sdk\sdk\GameSettings\GameSettings.hpp" />
     <ClInclude Include="wattson-sdk\sdk\Minecraft\Minecraft.hpp" />
     <ClInclude Include="wattson-sdk\sdk\Player\Player.hpp" />
     <ClInclude Include="wattson-sdk\sdk\RenderManager\RenderManager.hpp" />

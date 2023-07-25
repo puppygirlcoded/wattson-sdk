@@ -2,8 +2,9 @@
 
 void Visuals::OnUpdate()
 {
-	const auto m_arrPlayers = g_World->GetPlayerEntites();
+	this->Fullbright();
 
+	const auto m_arrPlayers = g_World->GetPlayerEntites();
 	if (m_arrPlayers.empty())
 	{
 		return;
@@ -50,4 +51,28 @@ void Visuals::OnUpdate()
 			g_Render->AddLine(g_Wattson->g_Utils.m_vecScreenSize * 0.5f, m_vecScreenPos, 1.f);
 		}
 	}
+}
+
+void Visuals::Fullbright()
+{
+	static float m_flOriginalGamma = g_GameSettings->GetGamma();
+	static bool m_bDidChange = false;
+
+	if (m_bDidChange != g_Vars->Visuals.Fullbright)
+	{
+		if (!g_Vars->Visuals.Fullbright)
+		{
+			m_flOriginalGamma = std::clamp<float>(m_flOriginalGamma, 0.f, 1.f);
+			g_GameSettings->SetGamma(m_flOriginalGamma);
+		}
+
+		m_bDidChange = g_Vars->Visuals.Fullbright;
+	}
+
+	if (!g_Vars->Visuals.Fullbright)
+	{
+		return;
+	}
+
+	g_GameSettings->SetGamma(std::numeric_limits<float>::max());
 }

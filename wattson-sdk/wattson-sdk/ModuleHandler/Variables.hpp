@@ -10,6 +10,8 @@ public:
 		bool Name;
 		bool Snaplines;
 		bool Glow;
+
+		bool Fullbright;
 	} 
 	Visuals;
 };

@@ -133,6 +133,8 @@ void ClickGui::OnSwapBuffers()
 			}
 
 			ImGui::Text("- World");
+			ImGui::Checkbox("Fullbright", &g_Vars->Visuals.Fullbright);
+
 		}
 		break;
 		case 2: // movement

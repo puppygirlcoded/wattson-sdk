@@ -18,162 +18,168 @@
     <ClCompile Include="dllmain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="wattson-client\vendor\Console\Console.cpp">
+    <ClCompile Include="wattson-sdk\ClickGui\ClickGui.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="wattson-client\vendor\Wattson\Wattson.cpp">
+    <ClCompile Include="wattson-sdk\HookManager\Detours\SwapBuffers.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="wattson-client\vendor\Java\Java.cpp">
+    <ClCompile Include="wattson-sdk\HookManager\HookManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="wattson-client\sdk\Minecraft\Minecraft.cpp">
+    <ClCompile Include="wattson-sdk\ModuleHandler\ModuleHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="wattson-client\sdk\World\World.cpp">
+    <ClCompile Include="wattson-sdk\ModuleHandler\Modules\Visuals\Visuals.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="wattson-client\sdk\Player\Player.cpp">
+    <ClCompile Include="wattson-sdk\sdk\ActiveRenderInfo\ActiveRenderInfo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="wattson-client\ModuleHandler\ModuleHandler.cpp">
+    <ClCompile Include="wattson-sdk\sdk\FloatBuffer\FloatBuffer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="wattson-client\ModuleHandler\Modules\Visuals\Visuals.cpp">
+    <ClCompile Include="wattson-sdk\sdk\Minecraft\Minecraft.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="wattson-client\sdk\Util\List.cpp">
+    <ClCompile Include="wattson-sdk\sdk\Player\Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="wattson-client\vendor\Mapper\Mapper.cpp">
+    <ClCompile Include="wattson-sdk\sdk\RenderManager\RenderManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="wattson-client\HookManager\HookManager.cpp">
+    <ClCompile Include="wattson-sdk\sdk\Util\List.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="wattson-client\HookManager\Detours\SwapBuffers.cpp">
+    <ClCompile Include="wattson-sdk\sdk\World\World.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="wattson-client\ClickGui\ClickGui.cpp">
+    <ClCompile Include="wattson-sdk\vendor\Console\Console.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="wattson-client\vendor\Input\Input.cpp">
+    <ClCompile Include="wattson-sdk\vendor\Input\Input.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="wattson-client\sdk\ActiveRenderInfo\ActiveRenderInfo.cpp">
+    <ClCompile Include="wattson-sdk\vendor\Java\Java.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="wattson-client\sdk\FloatBuffer\FloatBuffer.cpp">
+    <ClCompile Include="wattson-sdk\vendor\Mapper\Mapper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="wattson-client\vendor\Math\Math.cpp">
+    <ClCompile Include="wattson-sdk\vendor\Math\Math.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="wattson-client\sdk\RenderManager\RenderManager.cpp">
+    <ClCompile Include="wattson-sdk\vendor\Render\Render.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="wattson-client\vendor\Render\Render.cpp">
+    <ClCompile Include="wattson-sdk\vendor\Wattson\Wattson.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wattson-sdk\sdk\GameSettings\GameSettings.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="wattson-client\vendor\JNI\classfile_constants.h">
+    <ClInclude Include="wattson-sdk\ClickGui\ClickGui.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="wattson-client\vendor\JNI\jawt.h">
+    <ClInclude Include="wattson-sdk\ClickGui\Framework\Fonts\Fonts.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="wattson-client\vendor\JNI\jawt_md.h">
+    <ClInclude Include="wattson-sdk\HookManager\HookManager.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="wattson-client\vendor\JNI\jdwpTransport.h">
+    <ClInclude Include="wattson-sdk\ModuleHandler\ModuleHandler.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="wattson-client\vendor\JNI\jni.h">
+    <ClInclude Include="wattson-sdk\ModuleHandler\Modules\Visuals\Visuals.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="wattson-client\vendor\JNI\jni_md.h">
+    <ClInclude Include="wattson-sdk\ModuleHandler\Variables.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="wattson-client\vendor\JNI\jvmti.h">
+    <ClInclude Include="wattson-sdk\sdk\ActiveRenderInfo\ActiveRenderInfo.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="wattson-client\vendor\JNI\jvmticmlr.h">
+    <ClInclude Include="wattson-sdk\sdk\FloatBuffer\FloatBuffer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="wattson-client\vendor\Java\Java.hpp">
+    <ClInclude Include="wattson-sdk\sdk\Minecraft\Minecraft.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="wattson-client\vendor\std.hpp">
+    <ClInclude Include="wattson-sdk\sdk\Player\Player.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="wattson-client\vendor\Console\Console.hpp">
+    <ClInclude Include="wattson-sdk\sdk\RenderManager\RenderManager.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="wattson-client\vendor\Wattson\Wattson.hpp">
+    <ClInclude Include="wattson-sdk\sdk\Util\List.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="wattson-client\sdk\Minecraft\Minecraft.hpp">
+    <ClInclude Include="wattson-sdk\sdk\World\World.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="wattson-client\sdk\World\World.hpp">
+    <ClInclude Include="wattson-sdk\vendor\Console\Console.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="wattson-client\sdk\Player\Player.hpp">
+    <ClInclude Include="wattson-sdk\vendor\Input\Input.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="wattson-client\vendor\Math\Vector3f.hpp">
+    <ClInclude Include="wattson-sdk\vendor\Java\Java.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="wattson-client\ModuleHandler\ModuleHandler.hpp">
+    <ClInclude Include="wattson-sdk\vendor\JNI\classfile_constants.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="wattson-client\ModuleHandler\Modules\Visuals\Visuals.hpp">
+    <ClInclude Include="wattson-sdk\vendor\JNI\jawt.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="wattson-client\sdk\Util\List.hpp">
+    <ClInclude Include="wattson-sdk\vendor\JNI\jawt_md.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="wattson-client\vendor\Mapper\Mapper.hpp">
+    <ClInclude Include="wattson-sdk\vendor\JNI\jdwpTransport.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="wattson-client\HookManager\HookManager.hpp">
+    <ClInclude Include="wattson-sdk\vendor\JNI\jni.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="wattson-client\ClickGui\ClickGui.hpp">
+    <ClInclude Include="wattson-sdk\vendor\JNI\jni_md.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="wattson-client\vendor\Input\Input.hpp">
+    <ClInclude Include="wattson-sdk\vendor\JNI\jvmti.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="wattson-client\ClickGui\Framework\Fonts\Fonts.hpp">
+    <ClInclude Include="wattson-sdk\vendor\JNI\jvmticmlr.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="wattson-client\ModuleHandler\Variables.hpp">
+    <ClInclude Include="wattson-sdk\vendor\Mapper\Mapper.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="wattson-client\sdk\ActiveRenderInfo\ActiveRenderInfo.hpp">
+    <ClInclude Include="wattson-sdk\vendor\Math\Math.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="wattson-client\sdk\FloatBuffer\FloatBuffer.hpp">
+    <ClInclude Include="wattson-sdk\vendor\Math\Matrix.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="wattson-client\vendor\Math\Math.hpp">
+    <ClInclude Include="wattson-sdk\vendor\Math\Vector2f.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="wattson-client\vendor\Math\Matrix.hpp">
+    <ClInclude Include="wattson-sdk\vendor\Math\Vector3f.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="wattson-client\vendor\Math\Vector4f.hpp">
+    <ClInclude Include="wattson-sdk\vendor\Math\Vector4f.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="wattson-client\vendor\Math\Vector2f.hpp">
+    <ClInclude Include="wattson-sdk\vendor\Render\Render.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="wattson-client\sdk\RenderManager\RenderManager.hpp">
+    <ClInclude Include="wattson-sdk\vendor\std.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="wattson-client\vendor\Render\Render.hpp">
+    <ClInclude Include="wattson-sdk\vendor\Wattson\Wattson.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wattson-sdk\sdk\GameSettings\GameSettings.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
