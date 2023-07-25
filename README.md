@@ -12,3 +12,4 @@ This will be a cheat I will update and give a free cheat to people who can't aff
 - Name ESP
 - Snapline ESP
 - (1.9.4) Glow ESP
+- Fullbright
