@@ -11,8 +11,8 @@ jobject GameSettings::GetInstance()
 float GameSettings::GetGamma()
 {
 	auto m_cGameSettings = g_Java->Enviroment->FindClass(g_Mapper->GetObsfucatedName("net/minecraft/client/settings/GameSettings").data());
-
 	auto GammaSettingID = g_Java->Enviroment->GetFieldID(m_cGameSettings, g_Mapper->GetObsfucatedName("gammaSetting").data(), "F");
+
 	return g_Java->Enviroment->GetFloatField(this->GetInstance(), GammaSettingID);
 }
 
