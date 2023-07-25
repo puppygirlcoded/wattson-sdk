@@ -7,9 +7,9 @@ void WattsonRender::Begin()
 	this->DrawList = ImGui::GetBackgroundDrawList();
 }
 
-void WattsonRender::AddRectFilled(const Wattson::Vector2f& m_vecPosition, const Wattson::Vector2f& m_vecSize, Wattson::Color m_colColor, float m_flRounding)
+void WattsonRender::AddRectFilled(const Wattson::Vector2f& m_vecPosition, const Wattson::Vector2f& m_vecSize, Wattson::Color m_colColor, float m_flRounding, int m_iDrawFlags)
 {
-	this->DrawList->AddRectFilled(ImVec2(m_vecPosition.x, m_vecPosition.y), ImVec2(m_vecPosition.x + m_vecSize.x, m_vecPosition.y + m_vecSize.y), ImColor(m_colColor.r, m_colColor.g, m_colColor.b, m_colColor.a), m_flRounding);
+	this->DrawList->AddRectFilled(ImVec2(m_vecPosition.x, m_vecPosition.y), ImVec2(m_vecPosition.x + m_vecSize.x, m_vecPosition.y + m_vecSize.y), ImColor(m_colColor.r, m_colColor.g, m_colColor.b, m_colColor.a), m_flRounding, m_iDrawFlags);
 }
 
 void WattsonRender::AddText(const std::string& m_sLabel, const Wattson::Vector2f& m_vecPosition, Wattson::Color m_colColor)

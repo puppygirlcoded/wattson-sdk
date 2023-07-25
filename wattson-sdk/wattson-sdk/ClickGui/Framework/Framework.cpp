@@ -94,12 +94,12 @@ void ClickFramework::Watermark()
     int m_iOffset = 0;
     auto RenderItem = [&](const std::string& m_sFirstLabel, const std::string& m_sSecondLabel) -> void
     {
-        const auto m_vecTextSize = g_WattsonRender->GetTextSize(m_sFirstLabel);
+        const auto m_vecFirstTextSize = g_WattsonRender->GetTextSize(m_sFirstLabel);
 
-        g_WattsonRender->AddText(m_sFirstLabel, { 3.f, 2.f + m_iOffset }, Wattson::Color(97, 140, 209));
-        g_WattsonRender->AddText(m_sSecondLabel, { 3.f + m_vecTextSize.x, 2.f + m_iOffset }, Wattson::Color(180, 180, 180));
+        g_WattsonRender->AddText(m_sFirstLabel, { 3.f, 2.f + static_cast<float>(m_iOffset) }, Wattson::Color(97, 140, 209));
+        g_WattsonRender->AddText(m_sSecondLabel, { 3.f + m_vecFirstTextSize.x, 2.f + static_cast<float>(m_iOffset) }, Wattson::Color(180, 180, 180));
 
-        m_iOffset += m_vecTextSize.y;
+        m_iOffset += m_vecFirstTextSize.y;
     };
     
     RenderItem("Wattson", "Client");

@@ -25,7 +25,7 @@ public:
 		this->DrawList = this->LastDrawList;
 	}
 
-	void AddRectFilled(const Wattson::Vector2f& m_vecPosition, const Wattson::Vector2f& m_vecSize, Wattson::Color m_colColor, float m_flRounding = 0.f);
+	void AddRectFilled(const Wattson::Vector2f& m_vecPosition, const Wattson::Vector2f& m_vecSize, Wattson::Color m_colColor, float m_flRounding = 0.f, int m_iDrawFlags = 0);
 
 	void AddText(const std::string& m_sLabel, const Wattson::Vector2f& m_vecPosition, Wattson::Color m_colColor);
 
