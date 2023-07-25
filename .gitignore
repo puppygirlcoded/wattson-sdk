@@ -1,0 +1,14 @@
+
+.vs/
+x64/
+*.db
+*.db-shm
+*.db-wal
+*.opendb
+*.obj
+*.idb
+*.pdb
+*.recipe
+*.log
+*.tlog
+*.dll

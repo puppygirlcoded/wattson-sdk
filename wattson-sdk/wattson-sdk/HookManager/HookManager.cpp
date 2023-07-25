@@ -29,4 +29,5 @@ void HookManager::OnStartup()
 
 void HookManager::Destroy()
 {
+	MH_DisableHook(MH_ALL_HOOKS);
 }
