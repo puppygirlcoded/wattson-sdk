@@ -17,6 +17,10 @@
 #undef max
 #endif
 
+#ifdef GetForm
+#undef GetForm
+#endif
+
 // libs
 #pragma comment(lib, "opengl32.lib")
 #pragma comment(lib, "glu32.lib")
@@ -54,6 +58,7 @@
 #include <vendor/Render/Render.hpp>
 
 // Click Gui
+#include <ClickGui/Framework/Framework.hpp>
 #include <ClickGui/ClickGui.hpp>
 
 // SDK items

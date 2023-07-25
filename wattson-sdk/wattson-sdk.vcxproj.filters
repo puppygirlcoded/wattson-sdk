@@ -78,6 +78,27 @@
     <ClCompile Include="wattson-sdk\sdk\GameSettings\GameSettings.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="wattson-sdk\ClickGui\Framework\Controls\Checkbox\Checkbox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wattson-sdk\ClickGui\Framework\Controls\Slider\Slider.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wattson-sdk\ClickGui\Framework\Form\Form.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wattson-sdk\ClickGui\Framework\Object\Object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wattson-sdk\ClickGui\Framework\Other\AnimationManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wattson-sdk\ClickGui\Framework\Render\WattsonRender.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wattson-sdk\ClickGui\Framework\Framework.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="wattson-sdk\ClickGui\ClickGui.hpp">
@@ -180,6 +201,39 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="wattson-sdk\sdk\GameSettings\GameSettings.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wattson-sdk\ClickGui\Framework\Controls\Checkbox\Checkbox.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wattson-sdk\ClickGui\Framework\Controls\Slider\Slider.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wattson-sdk\ClickGui\Framework\Form\Form.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wattson-sdk\ClickGui\Framework\Math\Math.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wattson-sdk\ClickGui\Framework\Math\Vector2f.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wattson-sdk\ClickGui\Framework\Object\Object.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wattson-sdk\ClickGui\Framework\Other\AnimationManager.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wattson-sdk\ClickGui\Framework\Other\Color.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wattson-sdk\ClickGui\Framework\Other\Utils.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wattson-sdk\ClickGui\Framework\Render\WattsonRender.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wattson-sdk\ClickGui\Framework\Framework.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

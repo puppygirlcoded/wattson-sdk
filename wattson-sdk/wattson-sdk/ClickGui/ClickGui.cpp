@@ -52,11 +52,14 @@ void ClickGui::InitClickGui()
 	};
 
 	font_config.GlyphRanges = ranges;
-	ImGui::GetIO().FontDefault = io.Fonts->AddFontFromMemoryTTF(m_arrInterMediumBinary, sizeof(m_arrInterMediumBinary), 15.f, &font_config, ranges);
+	ImGui::GetIO().FontDefault = io.Fonts->AddFontFromMemoryTTF(m_arrInterMediumBinary, sizeof(m_arrInterMediumBinary), 18.f, &font_config, ranges);
+
+	ImGuiFreeType::BuildFontAtlas(io.Fonts);
 
 	ImGui_ImplWin32_Init(g_Wattson->g_Utils.m_pGameWindow);
 	ImGui_ImplOpenGL2_Init();
 
+	g_Framework->CreateInstance();
 
 	m_bIsClickGuiInitialised = true;
 }
@@ -107,53 +110,10 @@ void ClickGui::OnSwapBuffers()
 		}
 	}
 
-	static int m_iTabIndex = 0;
-
-	ImGui::SetWindowSize({ 530, 430 });
-	if (ImGui::Begin("Wattson Client", &this->m_bIsOpen, ImGuiWindowFlags_NoCollapse))
+	if (this->m_bIsOpen)
 	{
-		if (ImGui::Button("Combat")) { m_iTabIndex = 0; } ImGui::SameLine();
-		if (ImGui::Button("Visuals")) { m_iTabIndex = 1; } ImGui::SameLine();
-		if (ImGui::Button("Movement")) { m_iTabIndex = 2; } ImGui::SameLine();
-		if (ImGui::Button("Other")) { m_iTabIndex = 3; }
-
-		ImGui::Separator();
-
-		switch (m_iTabIndex)
-		{
-		case 0: // combat
-		{
-
-		}
-		break;
-		case 1: // visuals
-		{
-			ImGui::Text("- Players");
-			ImGui::Checkbox("Name", &g_Vars->Visuals.Name);
-			ImGui::Checkbox("Snaplines", &g_Vars->Visuals.Snaplines);
-			if (g_Wattson->g_Utils.m_iMinecraftVersion == 1)
-			{
-				ImGui::Checkbox("Glow", &g_Vars->Visuals.Glow);
-			}
-
-			ImGui::Text("- World");
-			ImGui::Checkbox("Fullbright", &g_Vars->Visuals.Fullbright);
-
-		}
-		break;
-		case 2: // movement
-		{
-
-		}
-		break;
-		case 3: // other
-		{
-
-		}
-		break;
-		}
+		g_Framework->PollEvents();
 	}
-	ImGui::End();
 
 	ImGui::Render();
 

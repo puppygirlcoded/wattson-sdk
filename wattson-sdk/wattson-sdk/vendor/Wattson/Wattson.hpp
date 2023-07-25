@@ -1,7 +1,7 @@
 #pragma once
 #include <chrono>
 
-class Wattson 
+class WattsonClient 
 {
 public:
 	void OnStartup();
@@ -18,4 +18,4 @@ public:
 	Player GetLocalPlayer();
 };
 
-inline auto g_Wattson = std::make_unique<Wattson>();
+inline auto g_Wattson = std::make_unique<WattsonClient>();

@@ -1,6 +1,6 @@
 #include <vendor/std.hpp>
 
-void Wattson::OnStartup()
+void WattsonClient::OnStartup()
 {
 	g_Console->Setup("Wattson debug");
 
@@ -24,7 +24,7 @@ void Wattson::OnStartup()
 	g_HookManager->OnStartup();
 }
 
-void Wattson::OnDestroy() 
+void WattsonClient::OnDestroy()
 {
 	g_Java->OnDestroy();
 	g_Console->Destroy();
@@ -32,12 +32,12 @@ void Wattson::OnDestroy()
 	g_ClickGui->Destroy();
 }
 
-Player Wattson::GetLocalPlayer()
+Player WattsonClient::GetLocalPlayer()
 {
 	return Player::Player();
 }
 
-void Wattson::OnSwapBuffers()
+void WattsonClient::OnSwapBuffers()
 {
 	this->g_Utils.m_vecScreenSize = Vector2f(ImGui::GetIO().DisplaySize.x, ImGui::GetIO().DisplaySize.y);
 }

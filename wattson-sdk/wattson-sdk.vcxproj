@@ -160,6 +160,13 @@
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="wattson-sdk\ClickGui\ClickGui.cpp" />
+    <ClCompile Include="wattson-sdk\ClickGui\Framework\Controls\Checkbox\Checkbox.cpp" />
+    <ClCompile Include="wattson-sdk\ClickGui\Framework\Controls\Slider\Slider.cpp" />
+    <ClCompile Include="wattson-sdk\ClickGui\Framework\Form\Form.cpp" />
+    <ClCompile Include="wattson-sdk\ClickGui\Framework\Framework.cpp" />
+    <ClCompile Include="wattson-sdk\ClickGui\Framework\Object\Object.cpp" />
+    <ClCompile Include="wattson-sdk\ClickGui\Framework\Other\AnimationManager.cpp" />
+    <ClCompile Include="wattson-sdk\ClickGui\Framework\Render\WattsonRender.cpp" />
     <ClCompile Include="wattson-sdk\HookManager\Detours\SwapBuffers.cpp" />
     <ClCompile Include="wattson-sdk\HookManager\HookManager.cpp" />
     <ClCompile Include="wattson-sdk\ModuleHandler\ModuleHandler.cpp" />
@@ -182,7 +189,18 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="wattson-sdk\ClickGui\ClickGui.hpp" />
+    <ClInclude Include="wattson-sdk\ClickGui\Framework\Controls\Checkbox\Checkbox.hpp" />
+    <ClInclude Include="wattson-sdk\ClickGui\Framework\Controls\Slider\Slider.hpp" />
     <ClInclude Include="wattson-sdk\ClickGui\Framework\Fonts\Fonts.hpp" />
+    <ClInclude Include="wattson-sdk\ClickGui\Framework\Form\Form.hpp" />
+    <ClInclude Include="wattson-sdk\ClickGui\Framework\Framework.hpp" />
+    <ClInclude Include="wattson-sdk\ClickGui\Framework\Math\Math.hpp" />
+    <ClInclude Include="wattson-sdk\ClickGui\Framework\Math\Vector2f.hpp" />
+    <ClInclude Include="wattson-sdk\ClickGui\Framework\Object\Object.hpp" />
+    <ClInclude Include="wattson-sdk\ClickGui\Framework\Other\AnimationManager.hpp" />
+    <ClInclude Include="wattson-sdk\ClickGui\Framework\Other\Color.hpp" />
+    <ClInclude Include="wattson-sdk\ClickGui\Framework\Other\Utils.hpp" />
+    <ClInclude Include="wattson-sdk\ClickGui\Framework\Render\WattsonRender.hpp" />
     <ClInclude Include="wattson-sdk\HookManager\HookManager.hpp" />
     <ClInclude Include="wattson-sdk\ModuleHandler\ModuleHandler.hpp" />
     <ClInclude Include="wattson-sdk\ModuleHandler\Modules\Visuals\Visuals.hpp" />
