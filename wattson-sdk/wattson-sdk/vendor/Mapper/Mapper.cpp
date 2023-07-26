@@ -52,8 +52,13 @@ void Mapper::OnStartup()
 			{"posX", "s"},
 			{"posY", "t"},
 			{"posZ", "u"},
+			{"lastTickPosX", "P"},
+			{"lastTickPosY", "Q"},
+			{"lastTickPosZ", "R"},
 			{"getName", "e_"},
-
+			{"height", "K"},
+			{"isInvisible", "ax"},
+			
 			{"net/minecraft/entity/EntityLivingBase", "pr"},
 			{"getHealth", "bn"},
 			{"getMaxHealth", "bu"},
@@ -90,8 +95,13 @@ void Mapper::OnStartup()
 			{"posX", "p"},
 			{"posY", "q"},
 			{"posZ", "r"},
+			{"lastTickPosX", "M"},
+			{"lastTickPosY", "N"},
+			{"lastTickPosZ", "O"},
 			{"glowing", "as"},
 			{"getName", "h_"},
+			{"height", "H"},
+			{"isInvisible", "aN"},
 
 			{"net/minecraft/entity/EntityLivingBase", "sa"},
 			{"getHealth", "bR"},

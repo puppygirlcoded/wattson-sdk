@@ -95,3 +95,24 @@ bool Input::OnWndProc(UINT m_uMsg, WPARAM m_wParam, LPARAM m_lParam)
 
 	return true;
 }
+
+void Input::SendInput(EMouseTypes m_eType, EMouseSides m_eSide)
+{
+	POINT m_pPosition = {};
+	if (!GetCursorPos(&m_pPosition))
+		return;
+
+	const auto m_hCurrentWindow = GetForegroundWindow();
+	PostMessage(m_hCurrentWindow, (DWORD)m_eType, (DWORD)m_eSide, MAKELPARAM(m_pPosition.x, m_pPosition.y));
+}
+
+void Input::Click(EMouseInputTypes m_eType, EMouseButtons m_eButton)
+{
+	(bool)(m_eType) ?
+		(bool)(m_eButton) ?
+		SendInput(EMouseTypes::EMouseTypeLeftDown, EMouseSides::EMouseSideLeft) :
+		SendInput(EMouseTypes::EMouseTypeRightDown, EMouseSides::EMouseSideRight) :
+		(bool)(m_eButton) ?
+		SendInput(EMouseTypes::EMouseTypeLeftUp, EMouseSides::EMouseSideLeft) :
+		SendInput(EMouseTypes::EMouseTypeRightDown, EMouseSides::EMouseSideRight);
+}

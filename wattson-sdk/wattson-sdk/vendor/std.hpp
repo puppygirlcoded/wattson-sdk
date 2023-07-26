@@ -73,6 +73,7 @@
 #include <sdk/GameSettings/GameSettings.hpp>
 
 // Modules
+#include <ModuleHandler/Modules/Clicker/Clicker.hpp>
 #include <ModuleHandler/Modules/Visuals/Visuals.hpp>
 
 // Module handler

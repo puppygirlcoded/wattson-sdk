@@ -16,7 +16,7 @@ unsigned long long Startup(void* m_pInstance)
 	{
 		g_ModuleHandler->HandleModules();
 
-		std::this_thread::sleep_for(std::chrono::milliseconds(20));
+		std::this_thread::sleep_for(std::chrono::milliseconds(5));
 	}
 
 	g_Wattson->OnDestroy();

@@ -12,6 +12,33 @@ enum class EKeyStates : int
 	EKeyStateReleased
 };
 
+enum class EMouseTypes : DWORD
+{
+	EMouseTypeLeftUp = WM_LBUTTONUP,
+	EMouseTypeLeftDown = WM_LBUTTONDOWN,
+	EMouseTypeRightUp = WM_RBUTTONUP,
+	EMouseTypeRightDown = WM_RBUTTONDOWN
+};
+
+enum class EMouseSides : DWORD
+{
+	EMouseSideLeft = MK_LBUTTON,
+	EMouseSideRight = MK_RBUTTON
+};
+
+enum class EMouseButtons : bool 
+{ 
+	EMouseButtonRight,
+	EMouseButtonLeft 
+
+};
+
+enum class EMouseInputTypes : bool 
+{ 
+	EMouseInputTypeUp, 
+	EMouseInputTypeDown 
+};
+
 long __stdcall WndProc(HWND m_Window, UINT m_uMsg, WPARAM m_wParam, LPARAM m_lParam);
 
 class Input
@@ -42,6 +69,9 @@ public:
 
 		return false;
 	}
+
+	void SendInput(EMouseTypes m_eType, EMouseSides m_eSide);
+	void Click(EMouseInputTypes m_eType, EMouseButtons m_eButton);
 };
 
 inline auto g_Input = std::make_unique<Input>();

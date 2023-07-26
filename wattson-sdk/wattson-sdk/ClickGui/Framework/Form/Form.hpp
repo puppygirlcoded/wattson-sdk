@@ -108,8 +108,14 @@ public:
 
     void AddControl(const std::string& m_sIdentifier, float* m_flValue, float m_flMin, float m_flMax)
     {
-        this->m_dControls.emplace_back(ControlTypeSlider, std::make_any<Slider_t>(m_sIdentifier, m_flValue, m_flMin, m_flMax));
+        this->m_dControls.emplace_back(ControlTypeSliderFloat, std::make_any<SliderFloat_t>(m_sIdentifier, m_flValue, m_flMin, m_flMax));
     }
+
+    void AddControl(const std::string& m_sIdentifier, int* m_iValue, int m_iMin, int m_iMax)
+    {
+        this->m_dControls.emplace_back(ControlTypeSliderInt, std::make_any<SliderInt_t>(m_sIdentifier, m_iValue, m_iMin, m_iMax));
+    }
+
 
 private:
     std::string m_sIdentifier;

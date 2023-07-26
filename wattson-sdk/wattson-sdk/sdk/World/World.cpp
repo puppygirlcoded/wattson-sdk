@@ -37,6 +37,11 @@ std::vector<Player> World::GetPlayerEntites()
 		}
 
 		Player m_Player = Player::Player(m_pPlayer);
+		if (m_Player.IsInvisible())
+		{
+			continue;
+		}
+		
 		Ret.push_back(m_Player);
 	}
 

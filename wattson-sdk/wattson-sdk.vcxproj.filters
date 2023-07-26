@@ -99,6 +99,9 @@
     <ClCompile Include="wattson-sdk\ClickGui\Framework\Framework.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="wattson-sdk\ModuleHandler\Modules\Clicker\Clicker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="wattson-sdk\ClickGui\ClickGui.hpp">
@@ -234,6 +237,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="wattson-sdk\ClickGui\Framework\Framework.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wattson-sdk\sdk\Timer\Timer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wattson-sdk\ModuleHandler\Modules\Clicker\Clicker.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

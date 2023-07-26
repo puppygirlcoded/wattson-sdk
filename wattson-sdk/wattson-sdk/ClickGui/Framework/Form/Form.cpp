@@ -39,9 +39,15 @@ void Form::PollControlInputs()
             object.Update(this);
         }
         break;
-        case ControlTypeSlider:
+        case ControlTypeSliderFloat:
         {
-            auto object = std::any_cast<Slider_t>(control.m_Object);
+            auto object = std::any_cast<SliderFloat_t>(control.m_Object);
+            object.Update(this);
+        }
+        break;
+        case ControlTypeSliderInt:
+        {
+            auto object = std::any_cast<SliderInt_t>(control.m_Object);
             object.Update(this);
         }
         break;

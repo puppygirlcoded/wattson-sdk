@@ -11,20 +11,35 @@ void ClickFramework::CreateInstance()
 
     this->m_vecInitialPosition = Wattson::Vector2f(50.f, 50.f);
 
-    auto CombatForm = this->AddForm("Combat");
-    
-    auto VisualsForm = this->AddForm("Visuals", EFormFlagOpenCollapsedState);
-    VisualsForm->AddControl("Name ESP", &g_Vars->Visuals.Name);
-    VisualsForm->AddControl("Tracer ESP", &g_Vars->Visuals.Snaplines);
-    if (g_Wattson->g_Utils.m_iMinecraftVersion == 1)
+    if (auto CombatForm = this->AddForm("Combat"))
     {
-        VisualsForm->AddControl("Glow", &g_Vars->Visuals.Glow);
+
     }
-    VisualsForm->AddControl("Fullbright", &g_Vars->Visuals.Fullbright);
+    
+    if (auto VisualsForm = this->AddForm("Visuals", EFormFlagOpenCollapsedState))
+    {
+        VisualsForm->AddControl("Name", &g_Vars->Visuals.Name);
+        VisualsForm->AddControl("Box", &g_Vars->Visuals.Box);
+        VisualsForm->AddControl("Health", &g_Vars->Visuals.Health);
+        VisualsForm->AddControl("Tracer", &g_Vars->Visuals.Snaplines);
+        if (g_Wattson->g_Utils.m_iMinecraftVersion == 1)
+        {
+            VisualsForm->AddControl("Glow", &g_Vars->Visuals.Glow);
+        }
+        VisualsForm->AddControl("Fullbright", &g_Vars->Visuals.Fullbright);
+    }
+    
+    if (auto ClickerForm = this->AddForm("Clicker"))
+    {
+        ClickerForm->AddControl("Enable", &g_Vars->Clicker.Enabled);
+        ClickerForm->AddControl("Minimum CPS", &g_Vars->Clicker.MinimumCPS, 0, 25);
+        ClickerForm->AddControl("Maximum CPS", &g_Vars->Clicker.MaximumCPS, 0, 25);
+    }
 
-    auto ClickerForm = this->AddForm("Clicker");
+    if (auto MovementForm = this->AddForm("Movement"))
+    {
 
-    auto MovementForm = this->AddForm("Movement");
+    }
 
     this->m_bHasCreatedInstance = true;
 }

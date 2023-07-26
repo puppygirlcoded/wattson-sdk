@@ -19,7 +19,8 @@ enum EControlType
     ControlTypeNone = 0,
     ControlTypeLabel,
     ControlTypeCheckbox,
-    ControlTypeSlider
+    ControlTypeSliderFloat,
+    ControlTypeSliderInt,
 };
 
 class Object

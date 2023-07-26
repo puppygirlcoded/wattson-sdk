@@ -7,7 +7,17 @@ public:
 
 	struct
 	{
+		bool Enabled = false;
+		int MinimumCPS = 5;
+		int MaximumCPS = 10;
+	}
+	Clicker;
+
+	struct
+	{
 		bool Name;
+		bool Box;
+		bool Health;
 		bool Snaplines;
 		bool Glow;
 

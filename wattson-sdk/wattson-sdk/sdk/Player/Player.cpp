@@ -52,9 +52,32 @@ double Player::GetZ()
 	return g_Java->Enviroment->GetDoubleField(this->GetInstance(), posZID);
 }
 
+double Player::GetLastTickPosX()
+{
+	const jfieldID LastTickPosXID = g_Java->Enviroment->GetFieldID(this->GetClass(), g_Mapper->GetObsfucatedName("lastTickPosX").data(), "D");
+	return g_Java->Enviroment->GetDoubleField(this->GetInstance(), LastTickPosXID);
+}
+
+double Player::GetLastTickPosY()
+{
+	const jfieldID LastTickPosYID = g_Java->Enviroment->GetFieldID(this->GetClass(), g_Mapper->GetObsfucatedName("lastTickPosY").data(), "D");
+	return g_Java->Enviroment->GetDoubleField(this->GetInstance(), LastTickPosYID);
+}
+
+double Player::GetLastTickPosZ()
+{
+	const jfieldID LastTickPosZID = g_Java->Enviroment->GetFieldID(this->GetClass(), g_Mapper->GetObsfucatedName("lastTickPosZ").data(), "D");
+	return g_Java->Enviroment->GetDoubleField(this->GetInstance(), LastTickPosZID);
+}
+
 Vector3f Player::GetOrigin()
 {
 	return Vector3f(static_cast<float>(this->GetX()), static_cast<float>(this->GetY()), static_cast<float>(this->GetZ()));
+}
+
+Vector3f Player::GetLastTickOrigin()
+{
+	return Vector3f(static_cast<float>(this->GetLastTickPosX()), static_cast<float>(this->GetLastTickPosY()), static_cast<float>(this->GetLastTickPosZ()));
 }
 
 float Player::GetHealth()
@@ -114,4 +137,16 @@ std::string Player::GetName()
 	g_Java->Enviroment->ReleaseStringUTFChars(m_jstrName, m_sNativeString);
 
 	return m_sNativeString;
+}
+
+float Player::GetHeight()
+{
+	const jfieldID heightField = g_Java->Enviroment->GetFieldID(this->GetClass(), g_Mapper->GetObsfucatedName("height").data(), "F");
+	return g_Java->Enviroment->GetFloatField(this->GetInstance(), heightField);
+}
+
+bool Player::IsInvisible()
+{
+	const jmethodID IsInvisibleMethod = g_Java->Enviroment->GetMethodID(this->GetClass(), g_Mapper->GetObsfucatedName("isInvisible").data(), "()Z");
+	return g_Java->Enviroment->CallBooleanMethod(this->GetInstance(), IsInvisibleMethod);
 }
