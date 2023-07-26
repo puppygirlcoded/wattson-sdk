@@ -3,7 +3,7 @@ Minecraft 1.8.9 and 1.9.4 internal cheat
 
 This will be a cheat I will update and give a free cheat to people who can't afford those premium cheats!
 
-Join the official Discord server to keep up-to-date with my Client: https://discord.gg/cD4CFYrMzJ
+Join the official Discord server to keep up-to-date on this cheat: https://discord.gg/cD4CFYrMzJ
 
 
 # SDK Features
