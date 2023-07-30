@@ -68,7 +68,7 @@ void Visuals::OnUpdate()
 			const std::string m_sHealth = std::vformat("{:.0f}/{:.0f}", std::make_format_args(m_Player.GetHealth(), m_Player.GetMaxHealth()));
 			const float m_flHealth = m_Player.GetHealth() / m_Player.GetMaxHealth();
 
-			g_Render->AddText(m_sHealth, { m_vecBoundingBox.x + m_vecBoundingBox.z / 2.f, m_vecBoundingBox.y - 18.f }, Wattson::Color(125, 255, 125).Lerp(Wattson::Color(255, 125, 125), m_flHealth), true);
+			g_Render->AddText(m_sHealth, { m_vecBoundingBox.x + m_vecBoundingBox.z / 2.f, m_vecBoundingBox.y - 18.f }, Wattson::Color(255, 125, 125).Lerp(Wattson::Color(125, 255, 125), m_flHealth), true);
 		}
 
 		if (g_Vars->Visuals.Snaplines)
