@@ -17,3 +17,9 @@ jobject Minecraft::GetInstance()
 
 	return g_Java->Enviroment->CallStaticObjectMethod(this->GetClass(), getMinecraftID);
 }
+
+void Minecraft::SetRightClickDelay(const int& m_iNewTick)
+{
+	const jfieldID rightClickDelayTimerID = g_Java->Enviroment->GetFieldID(this->GetClass(), g_Mapper->GetObsfucatedName("rightClickDelayTimer").data(), "I");
+	g_Java->Enviroment->SetIntField(this->GetInstance(), rightClickDelayTimerID, m_iNewTick);
+}

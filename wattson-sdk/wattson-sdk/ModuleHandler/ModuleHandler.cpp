@@ -6,12 +6,17 @@ void ModuleHandler::HandleModules()
 
 	if (!g_Java->CanRun())
 	{
+		g_Render->Swap();
 		return;
 	}
 
-	std::thread([&] { g_Clicker->OnUpdate(); std::this_thread::sleep_for(std::chrono::milliseconds(5)); }).detach();
+	g_FastPlace->OnUpdate();
 
 	g_Visuals->OnUpdate();
 
 	g_Render->Swap();
+
+	g_Clicker->OnUpdate();
+
+	g_Movement->OnUpdate();
 }

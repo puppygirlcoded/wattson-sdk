@@ -13,7 +13,7 @@ void ClickFramework::CreateInstance()
 
     if (auto CombatForm = this->AddForm("Combat"))
     {
-
+        
     }
     
     if (auto VisualsForm = this->AddForm("Visuals", EFormFlagOpenCollapsedState))
@@ -38,7 +38,13 @@ void ClickFramework::CreateInstance()
 
     if (auto MovementForm = this->AddForm("Movement"))
     {
+        MovementForm->AddControl("Knockback Modifier", &g_Vars->Movement.KnockbackModifier);
+        MovementForm->AddControl("Value", &g_Vars->Movement.KnockbackModifierValue, 0.f, 1.f);
+    }
 
+    if (auto HelpersForm = this->AddForm("Helpers"))
+    {
+        HelpersForm->AddControl("Fast Place", &g_Vars->Helpers.FastPlace);
     }
 
     this->m_bHasCreatedInstance = true;

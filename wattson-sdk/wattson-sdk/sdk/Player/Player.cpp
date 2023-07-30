@@ -150,3 +150,67 @@ bool Player::IsInvisible()
 	const jmethodID IsInvisibleMethod = g_Java->Enviroment->GetMethodID(this->GetClass(), g_Mapper->GetObsfucatedName("isInvisible").data(), "()Z");
 	return g_Java->Enviroment->CallBooleanMethod(this->GetInstance(), IsInvisibleMethod);
 }
+
+float Player::MoveForward()
+{
+	const jclass m_cEntityLivingBase = g_Java->Enviroment->FindClass(g_Mapper->GetObsfucatedName("net/minecraft/entity/EntityLivingBase").data());
+	const jfieldID moveForwardID = g_Java->Enviroment->GetFieldID(m_cEntityLivingBase, g_Mapper->GetObsfucatedName("moveForward").data(), "F");
+
+	return g_Java->Enviroment->GetFloatField(this->GetInstance(), moveForwardID);
+}
+
+float Player::MoveStrafe()
+{
+	const jclass m_cEntityLivingBase = g_Java->Enviroment->FindClass(g_Mapper->GetObsfucatedName("net/minecraft/entity/EntityLivingBase").data());
+	const jfieldID moveStrafingID = g_Java->Enviroment->GetFieldID(m_cEntityLivingBase, g_Mapper->GetObsfucatedName("moveStrafing").data(), "F");
+
+	return g_Java->Enviroment->GetFloatField(this->GetInstance(), moveStrafingID);
+}
+
+double Player::GetMotionX()
+{
+	const jfieldID getMotionXID = g_Java->Enviroment->GetFieldID(this->GetClass(), g_Mapper->GetObsfucatedName("motionX").data(), "D");
+	return g_Java->Enviroment->GetDoubleField(this->GetInstance(), getMotionXID);
+}
+
+double Player::GetMotionY()
+{
+	const jfieldID getMotionYID = g_Java->Enviroment->GetFieldID(this->GetClass(), g_Mapper->GetObsfucatedName("motionY").data(), "D");
+	return g_Java->Enviroment->GetDoubleField(this->GetInstance(), getMotionYID);
+}
+
+double Player::GetMotionZ()
+{
+	const jfieldID getMotionZID = g_Java->Enviroment->GetFieldID(this->GetClass(), g_Mapper->GetObsfucatedName("motionZ").data(), "D");
+	return g_Java->Enviroment->GetDoubleField(this->GetInstance(), getMotionZID);
+}
+
+void Player::SetMotionX(double m_dNewMotion)
+{
+	const jfieldID getMotionXID = g_Java->Enviroment->GetFieldID(this->GetClass(), g_Mapper->GetObsfucatedName("motionX").data(), "D");
+	g_Java->Enviroment->SetDoubleField(this->GetInstance(), getMotionXID, m_dNewMotion);
+}
+
+void Player::SetMotionY(double m_dNewMotion)
+{
+	const jfieldID getMotionYID = g_Java->Enviroment->GetFieldID(this->GetClass(), g_Mapper->GetObsfucatedName("motionY").data(), "D");
+	g_Java->Enviroment->SetDoubleField(this->GetInstance(), getMotionYID, m_dNewMotion);
+}
+
+void Player::SetMotionZ(double m_dNewMotion)
+{
+	const jfieldID getMotionZID = g_Java->Enviroment->GetFieldID(this->GetClass(), g_Mapper->GetObsfucatedName("motionZ").data(), "D");
+	g_Java->Enviroment->SetDoubleField(this->GetInstance(), getMotionZID, m_dNewMotion);
+}
+
+int Player::HurtResistantTime()
+{
+	const jfieldID hurtResistantTimeID = g_Java->Enviroment->GetFieldID(this->GetClass(), g_Mapper->GetObsfucatedName("hurtResistantTime").data(), "I");
+	return g_Java->Enviroment->GetIntField(this->GetInstance(), hurtResistantTimeID);
+}
+
+InventoryPlayer Player::GetInventory()
+{
+	const jfieldID inventoryID = g_Java->Enviroment->GetFieldID(this->GetClass(), g_Mapper->GetObsfucatedName("inventory").data(), g_Mapper->GetObsfucatedName("net/minecraft/entity/player/InventoryPlayer", ENameCaseL).data());
+	return InventoryPlayer(g_Java->Enviroment->GetObjectField(this->GetInstance(), inventoryID));
+}

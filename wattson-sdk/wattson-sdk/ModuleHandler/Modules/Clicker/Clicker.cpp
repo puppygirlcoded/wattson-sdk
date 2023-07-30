@@ -36,6 +36,24 @@ void Clicker::OnUpdate()
 		return;
 	}
 
+	auto Inventory = g_Wattson->GetLocalPlayer().GetInventory();
+	if (!Inventory.GetInstance())
+	{
+		return;
+	}
+
+	auto ActiveSlot = Inventory.GetItemFromSlot(Inventory.GetActiveSlot());
+	if (!ActiveSlot.GetInstance())
+	{
+		return;
+	}
+
+	if (!ActiveSlot.IsWeapon())
+	{
+		return;
+	}
+
+	// add a check for GuiScreen->IsInventoryOpen, g_Wattson->IsMenuItemOpen().
 	auto RandomInt = [&](const int m_iMin, const int m_iMax) -> int 
 	{
 		std::random_device rd;
@@ -54,13 +72,14 @@ void Clicker::OnUpdate()
 
 	this->m_iNextCPS = RandomInt(m_iMin, m_iMax);
 
-	float m_flDelay = static_cast<float>(1000 / this->m_iNextCPS) / 2.f;
+	std::thread([&] {
+		float m_flDelay = static_cast<float>(1000 / this->m_iNextCPS) / 2.f;
+		PreciceSleep((double)m_flDelay);
+		g_Input->Click(EMouseInputTypes::EMouseInputTypeDown, EMouseButtons::EMouseButtonLeft);
+		PreciceSleep((double)m_flDelay);
+		g_Input->Click(EMouseInputTypes::EMouseInputTypeUp, EMouseButtons::EMouseButtonLeft);
+		PreciceSleep((double)m_flDelay);
 
-	PreciceSleep((double)m_flDelay);
-
-	g_Input->Click(EMouseInputTypes::EMouseInputTypeDown, EMouseButtons::EMouseButtonLeft);
-
-	PreciceSleep((double)m_flDelay);
-
-	g_Input->Click(EMouseInputTypes::EMouseInputTypeUp, EMouseButtons::EMouseButtonLeft);
+		std::this_thread::sleep_for(std::chrono::milliseconds(5));
+	}).detach();
 }

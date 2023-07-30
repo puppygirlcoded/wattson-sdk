@@ -8,14 +8,14 @@ void HookManager::OnStartup()
 		return;
 	}
 
-	if (MH_CreateHookApi(L"Gdi32.dll", "SwapBuffers", &Detours::SwapBuffers::Hook, reinterpret_cast<void**>(&Detours::SwapBuffers::oSwapBuffers)) != MH_OK) 
+	if (MH_CreateHookApi(L"opengl32.dll", "wglSwapBuffers", &Detours::SwapBuffers::Hook, reinterpret_cast<void**>(&Detours::SwapBuffers::oSwapBuffers)) != MH_OK) 
 	{
-		g_Console->Print("Failed to hook Gdi32.dll->SwapBuffers\n");
+		g_Console->Print("Failed to hook opengl32.dll->wglSwapBuffers\n");
 		return;
 	}
 	else 
 	{
-		g_Console->Print("Hooked Gdi32.dll->SwapBuffers\n");
+		g_Console->Print("Hooked opengl32.dll->wglSwapBuffers\n");
 	}
 
 	if (MH_EnableHook(MH_ALL_HOOKS) != MH_OK) 

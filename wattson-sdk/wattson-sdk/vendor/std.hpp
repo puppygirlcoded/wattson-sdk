@@ -71,10 +71,14 @@
 #include <sdk/RenderManager/RenderManager.hpp>
 #include <sdk/ActiveRenderInfo/ActiveRenderInfo.hpp>
 #include <sdk/GameSettings/GameSettings.hpp>
+#include <sdk/InventoryPlayer/InventoryPlayer.hpp>
+#include <sdk/ItemStack/ItemStack.hpp>
 
 // Modules
+#include <ModuleHandler/Modules/Helpers/FastPlace/FastPlace.hpp>
 #include <ModuleHandler/Modules/Clicker/Clicker.hpp>
 #include <ModuleHandler/Modules/Visuals/Visuals.hpp>
+#include <ModuleHandler/Modules/Movement/Movement.hpp>
 
 // Module handler
 #include <ModuleHandler/ModuleHandler.hpp>

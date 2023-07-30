@@ -1,4 +1,5 @@
 #pragma once
+#include <vendor/Math/Vector3f.hpp>
 
 namespace Detours
 {

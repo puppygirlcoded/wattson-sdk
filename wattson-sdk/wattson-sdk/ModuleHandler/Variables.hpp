@@ -24,6 +24,18 @@ public:
 		bool Fullbright;
 	} 
 	Visuals;
+
+	struct
+	{
+		bool KnockbackModifier;
+		float KnockbackModifierValue = 0.5f;
+	}
+	Movement;
+
+	struct
+	{
+		bool FastPlace;
+	} Helpers;
 };
 
 inline auto g_Vars = std::make_unique<Variables>();

@@ -42,6 +42,7 @@ void Mapper::OnStartup()
 		m_mapObjects = {
 			{"net/minecraft/client/Minecraft", "ave"},
 			{"getMinecraft", "A"},
+			{"rightClickDelayTimer", "ap"},
 
 			{"net/minecraft/client/multiplayer/WorldClient", "bdb"},
 			{"theWorld", "f"},
@@ -58,10 +59,32 @@ void Mapper::OnStartup()
 			{"getName", "e_"},
 			{"height", "K"},
 			{"isInvisible", "ax"},
-			
+			{"motionX", "v"},
+			{"motionY", "w"},
+			{"motionZ", "x"},
+			{"hurtResistantTime", "Z"},
+			{"inventory", "bi"},
+
+			{"net/minecraft/entity/player/InventoryPlayer", "wm"},
+			{"currentItem", "c"},
+			{"itemStack", "a"},
+			{"getStackInSlot", "a"},
+
+			{"net/minecraft/item/Item", "zw"},
+
+			{"net/minecraft/item/ItemStack", "zx"},
+			{"getItem", "b"},
+			{"net/minecraft/item/ItemBlock", "yo"},
+			{"net/minecraft/item/ItemEnderPearl", "zk"},
+			{"net/minecraft/item/ItemSword", "aay"},
+			{"net/minecraft/item/ItemAxe", "yl"},
+			{"net/minecraft/item/ItemTool", "za"},
+
 			{"net/minecraft/entity/EntityLivingBase", "pr"},
 			{"getHealth", "bn"},
 			{"getMaxHealth", "bu"},
+			{"moveForward", "ba"},
+			{"moveStrafing", "aZ"},
 
 			{"net/minecraft/client/renderer/entity/RenderManager", "biu"},
 			{"renderManager", "aa"},
@@ -85,6 +108,7 @@ void Mapper::OnStartup()
 		m_mapObjects = {
 			{"net/minecraft/client/Minecraft", "bcd"},
 			{"getMinecraft", "z"},
+			{"rightClickDelayTimer", "as"},
 
 			{"net/minecraft/client/multiplayer/WorldClient", "bks"},
 			{"theWorld", "f"},
@@ -102,10 +126,32 @@ void Mapper::OnStartup()
 			{"getName", "h_"},
 			{"height", "H"},
 			{"isInvisible", "aN"},
+			{"motionX", "s"},
+			{"motionY", "t"},
+			{"motionZ", "u"},
+			{"hurtResistantTime", "W"},
+			{"inventory", "bs"},
+
+			{"net/minecraft/entity/player/InventoryPlayer", "zi"},
+			{"currentItem", "d"},
+			{"itemStack", "h"},
+			{"getStackInSlot", "a"},
+
+			{"net/minecraft/item/Item", "ado"},
+
+			{"net/minecraft/item/ItemStack", "adq"},
+			{"getItem", "b"},
+			{"net/minecraft/item/ItemBlock", "acc"},
+			{"net/minecraft/item/ItemEnderPearl", "adc"},
+			{"net/minecraft/item/ItemSword", "aex"},
+			{"net/minecraft/item/ItemTool", "acr"},
+			{"net/minecraft/item/ItemAxe", "abz"},
 
 			{"net/minecraft/entity/EntityLivingBase", "sa"},
 			{"getHealth", "bR"},
 			{"getMaxHealth", "bX"},
+			{"moveForward", "bf"},
+			{"moveStrafing", "be"},
 
 			{"net/minecraft/client/renderer/entity/RenderManager", "brj"},
 			{"renderManager", "ac"},
@@ -139,7 +185,7 @@ std::string Mapper::GetObsfucatedName(const std::string& UnobsfucatedName, const
 
 	if (m_Result == m_mapObjects.end())
 	{
-		//g_Console->Print("Warning, couldn't find '%s' in mapper!\n", UnobsfucatedName.c_str());
+		g_Console->Print("Warning, couldn't find '%s' in mapper!\n", UnobsfucatedName.c_str());
 		return std::string();
 	}
 	else

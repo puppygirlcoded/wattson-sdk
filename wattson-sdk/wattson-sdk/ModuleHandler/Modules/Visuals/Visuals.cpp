@@ -100,6 +100,6 @@ void Visuals::Fullbright()
 		return;
 	}
 
-	// We can't set this to std::numeric_limits<float>::max() or are shadows go really fucked lol
+	// We can't set this to std::numeric_limits<float>::max() or our shadows go really fucked lol
 	g_GameSettings->SetGamma(10000.f);
 }

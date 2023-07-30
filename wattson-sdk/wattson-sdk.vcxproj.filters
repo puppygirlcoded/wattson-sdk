@@ -102,6 +102,18 @@
     <ClCompile Include="wattson-sdk\ModuleHandler\Modules\Clicker\Clicker.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="wattson-sdk\ModuleHandler\Modules\Movement\Movement.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wattson-sdk\sdk\InventoryPlayer\InventoryPlayer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wattson-sdk\sdk\ItemStack\ItemStack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wattson-sdk\ModuleHandler\Modules\Helpers\FastPlace\FastPlace.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="wattson-sdk\ClickGui\ClickGui.hpp">
@@ -243,6 +255,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="wattson-sdk\ModuleHandler\Modules\Clicker\Clicker.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wattson-sdk\ModuleHandler\Modules\Movement\Movement.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wattson-sdk\sdk\ItemStack\ItemStack.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wattson-sdk\sdk\InventoryPlayer\InventoryPlayer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wattson-sdk\ModuleHandler\Modules\Helpers\FastPlace\FastPlace.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
