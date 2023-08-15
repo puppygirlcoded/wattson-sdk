@@ -29,6 +29,8 @@ public:
 	{
 		bool KnockbackModifier;
 		float KnockbackModifierValue = 0.5f;
+
+		bool FastStop;
 	}
 	Movement;
 

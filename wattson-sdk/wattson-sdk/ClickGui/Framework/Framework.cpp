@@ -40,6 +40,7 @@ void ClickFramework::CreateInstance()
     {
         MovementForm->AddControl("Knockback Modifier", &g_Vars->Movement.KnockbackModifier);
         MovementForm->AddControl("Value", &g_Vars->Movement.KnockbackModifierValue, 0.f, 1.f);
+        MovementForm->AddControl("Fast Stop", &g_Vars->Movement.FastStop);
     }
 
     if (auto HelpersForm = this->AddForm("Helpers"))
