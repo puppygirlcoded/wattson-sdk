@@ -16,7 +16,7 @@ void ClickFramework::CreateInstance()
         
     }
     
-    if (auto VisualsForm = this->AddForm("Visuals", EFormFlagOpenCollapsedState))
+    if (auto VisualsForm = this->AddForm("Visuals"))
     {
         VisualsForm->AddControl("Name", &g_Vars->Visuals.Name);
         VisualsForm->AddControl("Box", &g_Vars->Visuals.Box);
@@ -63,9 +63,16 @@ Form* ClickFramework::AddForm(const std::string& m_sIdentifier, EFormFlags m_eFo
         NewForm.ToggleCollapsedState();
     }
 
+    const bool m_bNewLine = this->m_arrForms.size() % 2;
+
     this->m_arrForms.push_back(NewForm);
 
-    this->m_vecInitialPosition = this->m_vecInitialPosition + Wattson::Vector2f(300.f, 0.f);
+    this->m_vecInitialPosition = this->m_vecInitialPosition + Wattson::Vector2f(300.f, m_bNewLine ? 45.f : 0.f);
+
+    if (m_bNewLine)
+    {
+        this->m_vecInitialPosition.x = 50.f;
+    }
 
     if (m_bIsFirstForm)
     {
