@@ -67,8 +67,20 @@ void ClickGui::InitClickGui()
 void ClickGui::OnSwapBuffers()
 {
 	const auto hwnd = WindowFromDC(g_Wattson->g_Utils.m_cGameHDC);
+
 	RECT window_rect; GetClientRect(hwnd, &window_rect);
 	m_OriginalContext = wglGetCurrentContext();
+
+	if (g_Wattson->g_Utils.m_pGameWindow != hwnd)
+	{
+		g_Wattson->g_Utils.m_pGameWindow = hwnd;
+
+		ImGui_ImplWin32_Shutdown();
+		ImGui_ImplOpenGL2_Shutdown();
+
+		ImGui_ImplWin32_Init(g_Wattson->g_Utils.m_pGameWindow);
+		ImGui_ImplOpenGL2_Init();
+	}
 
 	this->InitClickGui();
 

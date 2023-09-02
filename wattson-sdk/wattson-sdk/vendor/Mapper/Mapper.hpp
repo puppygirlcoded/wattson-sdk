@@ -3,8 +3,10 @@
 
 enum EMinecraftVersions 
 {
-	EMinecraftVersion_1_8_9,
-	EMinecraftVersion_1_9_4,
+	Vanilla_1_8_9,
+	Lunar_1_8_9,
+	Vanilla_1_9_4,
+	Lunar_1_9_4,
 };
 
 enum ENameCases
@@ -18,6 +20,8 @@ class Mapper
 public:
 	void OnStartup();
 	std::string GetObsfucatedName(const std::string& UnobsfucatedName, const ENameCases& m_eNameCase = ENameCaseNone);
+
+	EMinecraftVersions m_iMinecraftVersion;
 };
 
 inline auto g_Mapper = std::make_unique<Mapper>();

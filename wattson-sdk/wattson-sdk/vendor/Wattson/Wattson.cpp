@@ -4,15 +4,11 @@ void WattsonClient::OnStartup()
 {
 	g_Console->Setup("Wattson debug");
 
-	this->g_Utils.m_pGameWindow = FindWindowA(nullptr, "Minecraft 1.8.9");
+	this->g_Utils.m_pGameWindow = FindWindowA("LWJGL", nullptr);
 	if (!this->g_Utils.m_pGameWindow) 
 	{
-		this->g_Utils.m_pGameWindow = FindWindowA(nullptr, "Minecraft 1.9.4");
-		if (!this->g_Utils.m_pGameWindow)
-		{
-			g_Console->Print("Couldn't get game window!\n");
-			return;
-		}
+		g_Console->Print("Couldn't get game window!\n");
+		return;
 	}
 
 	g_Java->OnStartup();

@@ -10,34 +10,27 @@ void Mapper::OnStartup()
 		return;
 	}
 
-	// TODO: Figure out a way to find different minecraft versions and set them via here.
-	EMinecraftVersions m_iMinecraftVersion = EMinecraftVersion_1_8_9;
+	//Find our window (LWJGL is the window class name).
+	HWND hwnd = FindWindowA("LWJGL", NULL);
 
-	auto m_Minecraft189Window = FindWindowA(nullptr, "Minecraft 1.8.9");
-	if (!m_Minecraft189Window)
-	{
-		auto m_Minecraft194Window = FindWindowA(nullptr, "Minecraft 1.9.4");
-		if (!m_Minecraft194Window)
-		{
-			throw("Couldn't find Minecraft 1.8.9 or 1.9.4!");
-			return;
-		}
-		else
-		{
-			m_iMinecraftVersion = EMinecraftVersion_1_9_4;
-		}
-	}
-	else
-	{
-		m_iMinecraftVersion = EMinecraftVersion_1_8_9;
-	}
+	//Getting the window title name.
+	char title[256];
+	GetWindowText(hwnd, title, sizeof(title));
+
+	//Check if 1.8.9!
+	bool Version1_8_9 = std::strstr(title, "1.8.9") != nullptr;
+	//Check if Lunar Or Not.
+	bool VersionLunar = std::strstr(title, "Lunar Client") != nullptr;
+
+	//Set The Version.
+	m_iMinecraftVersion = Version1_8_9 ? (VersionLunar ? Lunar_1_8_9 : Vanilla_1_8_9) : (VersionLunar ? Lunar_1_9_4 : Vanilla_1_9_4);
 
 	g_Console->Print("Minecraft version: %i\n", (int)m_iMinecraftVersion);
 	g_Wattson->g_Utils.m_iMinecraftVersion = m_iMinecraftVersion;
 
 	switch (m_iMinecraftVersion)
 	{
-	case EMinecraftVersion_1_8_9:
+	case Vanilla_1_8_9:
 	{
 		m_mapObjects = {
 			{"net/minecraft/client/Minecraft", "ave"},
@@ -103,7 +96,50 @@ void Mapper::OnStartup()
 	}
 	break;
 
-	case EMinecraftVersion_1_9_4:
+	case Lunar_1_8_9:
+	{
+		m_mapObjects = {
+			{"net/minecraft/client/Minecraft", "net/minecraft/client/Minecraft"},
+			{"getMinecraft", "getMinecraft"},
+
+			{"net/minecraft/client/multiplayer/WorldClient", "net/minecraft/client/multiplayer/WorldClient"},
+			{"theWorld", "theWorld"},
+			{"playerEntities", "playerEntities"},
+
+			{"net/minecraft/client/entity/EntityPlayerSP", "net/minecraft/client/entity/EntityPlayerSP"},
+			{"thePlayer", "thePlayer"},
+			{"posX", "posX"},
+			{"posY", "posY"},
+			{"posZ", "posZ"},
+			{"lastTickPosX", "lastTickPosX"},
+			{"lastTickPosY", "lastTickPosY"},
+			{"lastTickPosZ", "lastTickPosZ"},
+			{"getName", "getName"},
+			{"height", "height"},
+			{"isInvisible", "isInvisible"},
+
+			{"net/minecraft/entity/EntityLivingBase", "net/minecraft/entity/EntityLivingBase"},
+			{"getHealth", "getHealth"},
+			{"getMaxHealth", "getMaxHealth"},
+
+			{"net/minecraft/client/renderer/entity/RenderManager", "net/minecraft/client/renderer/entity/RenderManager"},
+			{"renderManager", "renderManager"},
+			{"renderPosX", "renderPosX"},
+			{"renderPosY", "renderPosY"},
+			{"renderPosZ", "renderPosZ"},
+
+			{"net/minecraft/client/renderer/ActiveRenderInfo", "net/minecraft/client/renderer/ActiveRenderInfo"},
+			{"PROJECTION", "PROJECTION"},
+			{"MODELVIEW", "MODELVIEW"},
+
+			{"net/minecraft/client/settings/GameSettings", "net/minecraft/client/settings/GameSettings"},
+			{"gameSettings", "gameSettings"},
+			{"gammaSetting", "gammaSetting"},
+		};
+	}
+	break;
+
+	case Vanilla_1_9_4:
 	{
 		m_mapObjects = {
 			{"net/minecraft/client/Minecraft", "bcd"},
@@ -167,6 +203,51 @@ void Mapper::OnStartup()
 			{"gameSettings", "u"},
 			{"gammaSetting", "ay"},
 		};
+
+		break;
+
+	case Lunar_1_9_4:
+	{
+		m_mapObjects = {
+			{"net/minecraft/client/Minecraft", "net/minecraft/client/Minecraft"},
+			{"getMinecraft", "getMinecraft"},
+
+			{"net/minecraft/client/multiplayer/WorldClient", "net/minecraft/client/multiplayer/WorldClient"},
+			{"theWorld", "theWorld"},
+			{"playerEntities", "playerEntities"},
+
+			{"net/minecraft/client/entity/EntityPlayerSP", "net/minecraft/client/entity/EntityPlayerSP"},
+			{"thePlayer", "thePlayer"},
+			{"posX", "posX"},
+			{"posY", "posY"},
+			{"posZ", "posZ"},
+			{"lastTickPosX", "lastTickPosX"},
+			{"lastTickPosY", "lastTickPosY"},
+			{"lastTickPosZ", "lastTickPosZ"},
+			{"glowing", "glowing"},
+			{"getName", "getName"},
+			{"height", "height"},
+			{"isInvisible", "isInvisible"},
+
+			{"net/minecraft/entity/EntityLivingBase", "net/minecraft/entity/EntityLivingBase"},
+			{"getHealth", "getHealth"},
+			{"getMaxHealth", "getMaxHealth"},
+
+			{"net/minecraft/client/renderer/entity/RenderManager", "net/minecraft/client/renderer/entity/RenderManager"},
+			{"renderManager", "renderManager"},
+			{"renderPosX", "renderPosX"},
+			{"renderPosY", "renderPosY"},
+			{"renderPosZ", "renderPosZ"},
+
+			{"net/minecraft/client/renderer/ActiveRenderInfo", "net/minecraft/client/renderer/ActiveRenderInfo"},
+			{"PROJECTION", "PROJECTION"},
+			{"MODELVIEW", "MODELVIEW"},
+
+			{"net/minecraft/client/settings/GameSettings", "net/minecraft/client/settings/GameSettings"},
+			{"gameSettings", "gameSettings"},
+			{"gammaSetting", "gammaSetting"},
+		};
+	}
 	}
 	break;
 	}
@@ -181,7 +262,7 @@ std::string Mapper::GetObsfucatedName(const std::string& UnobsfucatedName, const
 		return std::string();
 	}
 
-	const auto m_Result = m_mapObjects.find(UnobsfucatedName);
+	std::map<std::string, std::string>::iterator m_Result = m_mapObjects.find(UnobsfucatedName);
 
 	if (m_Result == m_mapObjects.end())
 	{
