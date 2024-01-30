@@ -1,0 +1,15 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json",
+  "name": "wattson-sdk",
+  "version": "1.0",
+  "builtin-baseline": "703a8113f42e794534df5dfc5cece5dabcb949d0",
+  "dependencies": [
+    {
+      "name": "minhook"
+    },
+    {
+      "name": "imgui",
+      "features": [ "freetype", "opengl2-binding", "win32-binding" ]
+    }
+  ]
+}
