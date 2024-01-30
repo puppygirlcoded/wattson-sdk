@@ -1,14 +1,16 @@
+# Visual Studio intermediate files
+.vs
 
-.vs/
-x64/
-*.db
-*.db-shm
-*.db-wal
-*.opendb
-*.obj
-*.idb
-*.pdb
-*.recipe
-*.log
-*.tlog
-*.dll
+# Visual Studio Code user settings
+.vscode
+
+# Artifacts and intermediate files
+build
+temp
+
+# Visual Studio user project settings
+*.vcxproj.user
+
+# Vcpkg installed packages
+other_includes
+vcpkg_installed/*
