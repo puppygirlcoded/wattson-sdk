@@ -1,3 +1,4 @@
+#include <algorithm>
 #include "Slider.hpp"
 #include "../../Form/Form.hpp"
 #include "../../Framework.hpp"
