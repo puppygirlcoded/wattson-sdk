@@ -4,6 +4,8 @@
 #include "../Controls/Checkbox/Checkbox.hpp"
 #include "../Controls/Slider/Slider.hpp"
 
+#include <algorithm>
+
 struct ControlObject_t
 {
     ControlObject_t(const EControlType m_eType, std::any&& m_aObject) : Type(m_eType), m_Object(std::move(m_aObject)) {}
