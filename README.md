@@ -12,21 +12,7 @@ Once you have installed vcpkg you will need to run the vcpkg Visual Studio integ
 
 `vcpkg integrate install`
 
-Once you have integrated vcpkg into Visual Studio you will need these packages in order to build the project.
-
-`vcpkg install imgui:x64-windows-static-md`
-
-`vcpkg install imgui[freetype]:x64-windows-static-md`
-
-`vcpkg install imgui[opengl2-binding]:x64-windows-static-md`
-
-`vcpkg install imgui[win32-binding]:x64-windows-static-md`
-
-`vcpkg install minhook:x64-windows-static-md`
-
-After every package has been installed correctly, restart your system and open the wattson-sdk project.
-
-If you're unable to build, make sure your vcpkg triplet is `x64-windows-static-md` [example image](https://imgur.com/a81Faq2)
+Once you have integrated vcpkg into Visual Studio you will be able to compile the project.
 
 # SDK Features
 - Version mapper
